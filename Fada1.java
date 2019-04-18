@@ -45,18 +45,19 @@ public class FADA {
 						y = j;
 					}
 				}
-                                int contadori=i,contadorx=x;
-                                while(contadori>0){
-                                    contadori--;
-                                    if(m[contadori][j]==1){
-                                        while(contadorx>0){
-                                            if(s[j][j]==1){
-                                                contadorx--;
-                                            }
+                                int contador=i,contadorx=x;
+                                while(contador>0){
+                                    contador--;
+                                    if(m[contador][j]==1){
+                                        if(s[j][j]==1 && contadorx!=0){
+                                            contadorx--;
+                                        }
+                                        else if(s[j][j]==1 && contadorx==0){
+                                            contadorx=x;
                                         }
                                     }
                                 }
-                                s[x][y]=1;
+                                s[contadorx][y]=1;
 				j = size;
 			}
 		}
