@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fada;
+package fada_project;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author miime_000
  */
-public class Fada1 {
+public class FADA {
 
     /**
      * @param args the command line arguments
@@ -45,15 +45,16 @@ public class Fada1 {
 						y = j;
 					}
 				}
-				int contador=0; //nos permitirá comparar si las posiciones anteriores son o no aliadas
-                                while(contador<i+1){ //mientras se llega a la posición actual
-                                    if(m[contador][j]==0){ //si es aliado
-                                        s[contador][y]=1;
-                                        contador++;
+                                int contador=i;
+                                while(contador>0){
+                                    contador--;
+                                    if(m[contador][j]==1){
+                                        if(s[j][j]==1){
+                                            x++;
+                                        }
                                     }
                                 }
-				
-				s[x][y] = 1;
+                                s[x][y]=1;
 				j = size;
 			}
 		}
