@@ -9,7 +9,7 @@
             while(valor!=-1){
                 System.out.print((char)valor);
                 matriz+=Character.toString((char)valor);
-                if(valor!=32){
+                if(valor!=32){ //32 en ASCII representa espacio, es para que los datos que se almacenen, s{olo sean 0's y 1's
                   almacenado+=Character.toString((char)valor);
                   //selecciones[i]=Integer.parseInt(almacenado);
                   //i++;
