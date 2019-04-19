@@ -35,20 +35,25 @@ public class FADA {
                     int y=0;
                     int x=0;
                         if(i==0 && j==i){
-                                s[x][y]=1;
+                            s[x][y]=1;
                         }
-                        while(i!=j) {
-                            if(m[i][j]==1) {
-                                if (s[x][y]==1) {		
-                                    x++;			
-                                    j=0;
-                                    y=j;
+                        while(i!=j){
+                            if(m[i][j]==1){
+                                if (s[x][y]==1){
+                                    if(s[y][y]==1){
+                                        x++;
+                                    }
+                                    else{
+                                        x++;
+                                        j=0;
+                                        y=j;
+                                    }
                                 }
                                 else{
                                     j++;
                                     y=j;
                                 }
-                            } 
+                            }
                             else{
                                 j++;
                                 y=j;
