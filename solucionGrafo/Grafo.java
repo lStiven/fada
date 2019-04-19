@@ -23,22 +23,20 @@ public class Grafo
 	 * para asociar los vertices del grafo (crearArista)
 	 */
 	void matrizAdyacente(Grafo g,int M[][]){
-	    int contador = 0;
-     for(int i=0; i<M.length; i++){
-         for(int j=0; j<M.length; j++){
-             if (M[i][j] == 1){
- 		        g.crearArista(i, j);
- 		        //System.out.print(("("+ i + "," + j + ")")+",");
-             }
-         }    
-         
-     }
+		int contador = 0;
+	    for(int i=0; i<M.length; i++){
+	        for(int j=0; j<M.length; j++){
+		        if (M[i][j] == 1){
+			        g.crearArista(i, j);
+			        //System.out.print(("("+ i + "," + j + ")")+",");
+		        }
+	    	}        
+	    }
      g.construirVilla();
 	}
  
 	// Metodo que añade las aristas en el grafo (lista de adyacencia) dado los vertices adyacentes
-	void crearArista(int v,int w) 
-	{ 	
+	void crearArista(int v,int w) { 	
 		// Grafo no dirigido, por eso se unen con aristas en ambos sentidos entre par de vertices
 		ady[v].add(w); 
 		ady[w].add(v); 
@@ -46,15 +44,13 @@ public class Grafo
 
 	/* Asigna las villas indexadas desde 0 a todos los vertice e imprime una
 	 * matriz que contiene las villas asignadas a cada pais, donde n son las 
-	 * filas (villas a construir) y m las columnas (selecciones).
-	 */
+	 * filas (villas a construir) y m las columnas (selecciones). */
 	void construirVilla(){ 
 		
-		int [][] S = new int[V][V]; /* 
-									* Matriz solucion:  S[i,j]= 1 si en la
-									* villa i se aloja la selección j, en
-									* otro caso S[i,j] = 0.
-									*/
+		int [][] S = new int[V][V]; /*  * Matriz solucion:  S[i,j]= 1 si en la
+						* villa i se aloja la selección j, en
+						* otro caso S[i,j] = 0.
+						*/
 		int resultado[] = new int[V];  // Arreglo utilizado para el numero de villas
 
 		/* Se inicializa todos los vertices sin signo para indicar que aun 
@@ -74,14 +70,14 @@ public class Grafo
 		// Construye o asigna villas a las selecciones restantes que aun no tienen ninguna villa asignada
 		for (int u = 1; u < V; u++){ // itera sobre todos los vertices adyacentes 
 			Iterator<Integer> it = ady[u].iterator() ; 
-			while (it.hasNext()) 
-			{ 
+			while (it.hasNext()) { 
 				int i = it.next(); 
-				if (resultado[i] != -1) 
-					villaDisponible[resultado[i]] = false;  /* Si una determinada seleccion ya tiene una villa asignada 
-															* la pone como no disponible (false) para sus selecciones adyacentes 
-															* (selecciones que no tienen relaciones diplomaticas) 
-															* para no asingarle la misma villa*/
+				if (resultado[i] != -1)
+					villaDisponible[resultado[i]] = false; 
+				/* Si una determinada seleccion ya tiene una villa asignada 
+				* la pone como no disponible (false) para sus selecciones adyacentes 
+				* (selecciones que no tienen relaciones diplomaticas) 
+				* para no asingarle la misma villa*/
 			} 
 
 			// Encuentra la primera villa disponible (true)
@@ -90,7 +86,6 @@ public class Grafo
 				if (villaDisponible[villa]) 
 					break; 
 			} 
-
 			resultado[u] = villa; // Asigna la villa 
 
 			// Se vuelven a colocar todos los valores en true para la proxima iteracion
@@ -117,8 +112,7 @@ public class Grafo
 	}
 
 	// Main
-	public static void main(String args[]) 
-	{ 
+	public static void main(String args[]) { 
 	    sc = new Scanner(System.in);
 		int size = sc.nextInt();
 		int[][] M = new int[size][size];
