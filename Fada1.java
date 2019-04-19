@@ -37,27 +37,30 @@ public class FADA {
 				int x = 0;
 				while (i != j) {
 					if (m[i][j] == 1) {
-						x = x + 1;
+                                                //x++;
 						j++;
 						y = j;
 					} else {
+                                                //x--;
 						j++;
 						y = j;
 					}
 				}
-                                int contador=i,contadorx=x;
-                                while(contador>0){
-                                    contador--;
-                                    if(m[contador][j]==1){
-                                        if(s[j][j]==1 && contadorx!=0){
-                                            contadorx--;
-                                        }
-                                        else if(s[j][j]==1 && contadorx==0){
-                                            contadorx=x;
+                                int contador=0;
+                                while(contador<i){
+                                    if(m[contador][y]==1){
+                                        if(s[contador][contador]==1){
+                                            s[x][y]=0;
+                                            s[contador][y]=1;
+                                            contador++;
                                         }
                                     }
+                                    else{
+                                        s[x][y]=1;
+                                        contador++;
+                                    }
                                 }
-                                s[contadorx][y]=1;
+                                //s[x][y]=1;
 				j = size;
 			}
 		}
