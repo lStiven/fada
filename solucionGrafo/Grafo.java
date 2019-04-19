@@ -3,15 +3,13 @@ import java.util.*;
 import java.util.LinkedList; // Libreria listas enlazadas
 
 //Clase Grafo: Representa un grafo no dirigido usando una lista de adyacencia
-public class Grafo
-{ 
+public class Grafo { 
 	private int V; // Número de vertices (numero de selecciones) 
 	private LinkedList<Integer> ady[]; // Lista de adyacencia
 	private static Scanner sc;
 
 	// Constructor 
-	Grafo(int v) 
-	{ 
+	Grafo(int v) { 
 		V = v; 
 		ady = new LinkedList[v]; // Inicializamos la lista enlazada (lista de adyancencia)
 		for (int i=0; i<v; ++i) 
@@ -32,7 +30,7 @@ public class Grafo
 		        }
 	    	}        
 	    }
-     g.construirVilla();
+     	g.construirVilla();
 	}
  
 	// Metodo que añade las aristas en el grafo (lista de adyacencia) dado los vertices adyacentes
@@ -46,7 +44,6 @@ public class Grafo
 	 * matriz que contiene las villas asignadas a cada pais, donde n son las 
 	 * filas (villas a construir) y m las columnas (selecciones). */
 	void construirVilla(){ 
-		
 		int [][] S = new int[V][V]; /*  * Matriz solucion:  S[i,j]= 1 si en la
 						* villa i se aloja la selección j, en
 						* otro caso S[i,j] = 0.
@@ -72,19 +69,21 @@ public class Grafo
 			Iterator<Integer> it = ady[u].iterator() ; 
 			while (it.hasNext()) { 
 				int i = it.next(); 
-				if (resultado[i] != -1)
+				if (resultado[i] != -1){
 					villaDisponible[resultado[i]] = false; 
 				/* Si una determinada seleccion ya tiene una villa asignada 
 				* la pone como no disponible (false) para sus selecciones adyacentes 
 				* (selecciones que no tienen relaciones diplomaticas) 
 				* para no asingarle la misma villa*/
+				}
 			} 
 
 			// Encuentra la primera villa disponible (true)
 			int villa; 
 			for (villa = 0; villa < V; villa++){ 
-				if (villaDisponible[villa]) 
+				if (villaDisponible[villa]){ 
 					break; 
+				}
 			} 
 			resultado[u] = villa; // Asigna la villa 
 
@@ -95,13 +94,13 @@ public class Grafo
 		// 
 		int c = 0; // lleva conteo de la cantidad de Villas
 		for (int u = 0; u < V; u++) {
-				S[resultado[u]][u] = 1; // resultado[u]: fila n,   u: columna m
-				if(resultado[u] >= c) {
-					c = resultado[u]; // Valor maximo de villas construidas = n filas
-				}
+			S[resultado[u]][u] = 1; // resultado[u]: fila n,   u: columna m
+			if(resultado[u] >= c) {
+				c = resultado[u]; // Valor maximo de villas construidas = n filas
 			}
-		
-		// Imprime la matriz S[i,j]
+		}
+
+		// Imprime la matriz solucion S[i,j]
 		for(int i=0; i <= c; i++) {
 			System.out.println();
 			for (int j=0; j<S.length; j++) {
@@ -113,7 +112,7 @@ public class Grafo
 
 	// Main
 	public static void main(String args[]) { 
-	    sc = new Scanner(System.in);
+	    	sc = new Scanner(System.in);
 		int size = sc.nextInt();
 		int[][] M = new int[size][size];
 
@@ -122,7 +121,6 @@ public class Grafo
 				M[i][j] = sc.nextInt();
 			}
 		}
-		
 		// se instancia la clase Grafo
 		Grafo g1 = new Grafo(size); 
 		
