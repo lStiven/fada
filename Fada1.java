@@ -46,18 +46,11 @@ public class FADA {
                                     else{
                                         x++;
                                         j=0;
-                                        y=j;
                                     }
                                 }
-                                else{
-                                    j++;
-                                    y=j;
-                                }
                             }
-                            else{
-                                j++;
-                                y=j;
-			    }
+                            j++;
+                            y=j;
 			}
 			s[x][y] = 1;
                         j=size;
