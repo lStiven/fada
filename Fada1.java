@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  *
  * @author miime_000
- */
+ */ 
 public class FADA {
 
     /**
@@ -30,40 +30,27 @@ public class FADA {
 
 			}
 		}
-		for (int i = 0; i < size; i++) {
+		int x=0;
+                int y=0;
+                for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-
-				int y = j;
-				int x = 0;
-				while (i != j) {
-					if (m[i][j] == 1) {
-                                                //x++;
-						j++;
-						y = j;
-					} else {
-                                                //x--;
-						j++;
-						y = j;
-					}
-				}
-                                int contador=0;
-                                while(contador<i){
-                                    if(m[contador][y]==1){
-                                        if(s[contador][contador]==1){
-                                            s[x][y]=0;
-                                            s[contador][y]=1;
-                                            contador++;
-                                        }
-                                    }
-                                    else{
-                                        s[x][y]=1;
-                                        contador++;
-                                    }
+                            y=i;
+                            x=0;
+                            if(i==0 && j==i){
+                                s[x][y]=1;
+                            }
+                            if(m[i][j]==1){
+                                if(s[j][j]==1){
+                                    x++;
                                 }
-                                //s[x][y]=1;
-				j = size;
-			}
-		}
+                                s[x][y]=1;
+                            }
+                            else{
+                                s[x][y]=1;
+                            }
+                            j=size;
+                        }
+                }
 		for (int i = 0; i < size; i++) {
 			System.out.println();
 			for (int j = 0; j < size; j++) {
@@ -72,3 +59,13 @@ public class FADA {
 		}
 	}
 }
+/*9
+0 1 1 0 0 1 0 0 0
+1 0 0 0 0 1 1 0 1
+1 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 1 0 0
+0 0 0 0 0 1 0 1 1
+1 1 0 0 1 0 0 0 0
+0 1 0 1 0 0 0 0 0
+0 0 0 0 1 0 0 0 0
+0 1 0 0 1 0 0 0 0*/
