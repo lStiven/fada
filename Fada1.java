@@ -30,26 +30,33 @@ public class FADA {
 
 			}
 		}
-		int x=0;
-                int y=0;
-                for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-                            y=i;
-                            x=0;
-                            if(i==0 && j==i){
+                for (int i=0; i<size; i++) {
+                    for (int j = 0; j < size; j++) {
+                    int y=0;
+                    int x=0;
+                        if(i==0 && j==i){
                                 s[x][y]=1;
-                            }
-                            if(m[i][j]==1){
-                                if(s[j][j]==1){
-                                    x++;
-                                }
-                                s[x][y]=1;
-                            }
-                            else{
-                                s[x][y]=1;
-                            }
-                            j=size;
                         }
+                        while(i!=j) {
+                            if(m[i][j]==1) {
+                                if (s[x][y]==1) {		
+                                    x++;			
+                                    j=0;
+                                    y=j;
+                                }
+                                else{
+                                    j++;
+                                    y=j;
+                                }
+                            } 
+                            else{
+                                j++;
+                                y=j;
+			    }
+			}
+			s[x][y] = 1;
+                        j=size;
+                    }
                 }
 		for (int i = 0; i < size; i++) {
 			System.out.println();
