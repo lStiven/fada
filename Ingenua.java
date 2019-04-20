@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author miime_000
  */
-public class Ingenua {
+public class PIngenua {
 
     /**
      * @param args the command line arguments
@@ -22,7 +22,7 @@ public class Ingenua {
 		int size = sc.nextInt();
 		int[][] m = new int[size][size];
 		int[][] s = new int[size][size];
-
+                
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
 				m[i][j] = sc.nextInt();
@@ -30,20 +30,24 @@ public class Ingenua {
 		}
                 
                 for (int i=0; i<size; i++) {
-                    int x=0;
-                    for (int j = 0; j < size; j++) {
-                    int y=j;
-                        if(m[i][j]==1){
-                            if (s[x][y]==1){
-                                x++;
+			int j=0, x=0;
+			while (j!=i){
+                            if (m[i][j] == 1){
+				if (s[x][j] == 1) {
+                                    x++;
+                                    j = 0;
+				} 
+                                else {
+                                    j++;
+                                }
                             }
-                        }
-                        else{
-                            s[x][y] = 1;
-                        }
-                    }
-                }
-                 
+                            else {
+                                j++;
+                            }
+			}
+                    s[x][j] = 1; 
+		}
+                
 		for (int i = 0; i < size; i++) {
 			System.out.println();
 			for (int j = 0; j < size; j++) {
