@@ -12,21 +12,13 @@ import java.io.IOException;
  *
  * @author miime_000
  */
-public class Texto {
+public class Proyecto {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
        // TODO code application logic here
-	/*En nombre de fichero, coloquen el nombre del archivo txt donde está la matriz,
-	recuerden que para que la lectura sea válida, debe tener el mismo modo que los ejemplos,
-	Ejemplo:
-	4
-	0 1 0 1
-	1 0 1 0
-	0 1 0 1
-	1 0 1 0*/
         final String nomFichero="C:\\Users\\miime_000\\Documents\\NetBeansProjects\\FADA\\src\\fada\\M.txt";
         try(FileReader fr=new FileReader (nomFichero)){
                 int valor=fr.read();
@@ -38,18 +30,20 @@ public class Texto {
                 int size=Integer.parseInt(tamano);
 		int[][] m = new int[size][size];
 		int[][] s = new int[size][size];
-                char[][] matriz= new char[size][size];
                 /*Continuación de lectura*/
+                /*Saltos para evitar leer espacios en blanco*/
+                valor=fr.read();
+                valor=fr.read();
                 valor=fr.read();
                 //for (int i = 0; i < size; i++) {
-                //    for (int j = 0; j < size; j++) {
+                    //for (int j = 0; j < size; j++) {
                         int x=0,y=0;
                         /*Mientras el archivo contenga valores, se leerá cada posición*/
                         while(valor!=-1){
                             /*en ASCII 32 es el espacio, así que no es necesario tenerlo en cuenta*/
                             if(valor!=32){
                                 if(y<size){
-                                    matriz[x][y]=((char)valor);
+                                    m[x][y]=Character.getNumericValue((char)valor);
                                     y++;
                                     valor=fr.read();
                                 }
@@ -69,7 +63,7 @@ public class Texto {
             for (int i=0; i<size;i++){
                 System.out.println("");
                 for(int j=0; j<size; j++){
-                    System.out.print(matriz[i][j]+" ");
+                    System.out.print(m[i][j]+" ");
                 }
             }
         }catch(IOException e){
