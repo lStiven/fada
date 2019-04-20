@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author miime_000
  */
-public class PIngenua {
+public class Ingenua {
 
     /**
      * @param args the command line arguments
@@ -29,17 +29,20 @@ public class PIngenua {
 			}
 		}
                 
-                //for (int i=0; i<size; i++) {
+                for (int i=0; i<size; i++) {
+                    int x=0;
                     for (int j = 0; j < size; j++) {
-                        int i=0;
+                    int y=j;
                         if(m[i][j]==1){
-                            s[i+1][j]=1;
+                            if (s[x][y]==1){
+                                x++;
+                            }
                         }
                         else{
-                            s[i][j]=1;
+                            s[x][y] = 1;
                         }
                     }
-                //}
+                }
                  
 		for (int i = 0; i < size; i++) {
 			System.out.println();
