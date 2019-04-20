@@ -1,4 +1,3 @@
-//Muchachos se me borró el de anoche no sé por qué, empecé a modificar de nuevo el que me enviaron, ya lo estoy arreglando ^^
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,7 +11,7 @@ import java.util.Scanner;
  *
  * @author miime_000
  */ 
-public class FADA {
+public class Dinamic {
 
     /**
      * @param args the command line arguments
