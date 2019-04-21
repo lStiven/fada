@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author miime_000
  */
-public class Proyecto {
+public class Texto {
 
     /**
      * @param args the command line arguments
