@@ -2,7 +2,9 @@
  * 
  */
 package FADA;
-
+/**
+ * @author Stiven®
+ */
 import java.io.FileReader;
 import java.io.IOException;
 
