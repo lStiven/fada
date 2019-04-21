@@ -6,11 +6,11 @@ package fada;
 import java.util.Scanner;
 
 /**
- * @author Stiven®
+ * @author StivenÂ®
  * @date 17/04/2019
  * @time 10:42:05 a. m.
  */
-public class Main {
+public class Dinamica {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
