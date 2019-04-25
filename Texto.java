@@ -27,7 +27,7 @@ public class Texto {
         0 1 0 1 0
         1 0 1 0 1
         0 1 0 1 0*/
-        final String nomFichero="C:\\Users\\miime_000\\Documents\\NetBeansProjects\\FADA\\src\\fada\\M.txt";
+        final String nomFichero="M9.txt";
         try(FileReader fr=new FileReader (nomFichero)){
                 int valor=fr.read();
                 String tamano="";

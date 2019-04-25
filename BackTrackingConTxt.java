@@ -1,4 +1,4 @@
-package FADA;
+package fada;
 import java.util.Arrays;
 
 

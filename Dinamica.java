@@ -6,7 +6,7 @@ package fada;
 import java.util.Scanner;
 
 /**
- * @author StivenÂ®
+ * @author Stiven®
  * @date 17/04/2019
  * @time 10:42:05 a. m.
  */
@@ -19,7 +19,7 @@ public class Dinamica {
 		int size = sc.nextInt();
 		int[][] m = new int[size][size];
 		int[][] s = new int[size][size];
-		int villas = 0;
+		int villas = 1;
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
@@ -32,8 +32,8 @@ public class Dinamica {
 			int j = 0, y = 0;
 
 			/*
-			 * verifica si hay o no relacion amistosa con todos los paises que se encuentren alojados
-			 * hasta el momento
+			 * verifica si hay o no relacion amistosa con todos los paises que se encuentren
+			 * alojados hasta el momento
 			 */
 			while (i != j) {
 				if (s[y][j] == 1) {			//Primero verifica si hay un pais alojado en esa villa
