@@ -37,7 +37,6 @@ public class Texto {
                 }
                 int size=Integer.parseInt(tamano);
 		int[][] m = new int[size][size];
-		int[][] s = new int[size][size];
                 /*Continuación de lectura*/
                 /*Saltos para evitar leer espacios en blanco*/
                 for(int i=0;i<3;i++){

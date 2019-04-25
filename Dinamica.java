@@ -60,6 +60,8 @@ public class Dinamica {
 				System.out.print(s[i][j] + " ");
 			}
 		}
+		
+		sc.close();
 
 	}
 
