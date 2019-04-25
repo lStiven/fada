@@ -18,7 +18,7 @@ public class Villas2 {
 		// TODO Auto-generated method stub
 
 		// Lectura de archivo de texto
-		final String nomFichero = "M4.txt";
+		final String nomFichero = "M9.txt";
 		int size;
 		int[][] m = null;
 		int[][] s = null;
@@ -80,7 +80,7 @@ public class Villas2 {
 			cont = 0;
 		}
 
-		// copia del arrglo anterior
+		// copia del arreglo anterior
 		int[] k = new int[size];
 
 		for (int i = 0; i < amistades.length; i++) {
